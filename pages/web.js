@@ -33,14 +33,14 @@ const web = () => {
 
       <div className="w-full py-[70px] px-2 bg-black"></div>
       <div className="max-w-[1080px] mx-auto p-8">
-        <h1 className="text-5xl font-bold text-center">
+        <h1 className="md:text-5xl text-3xl font-bold text-center">
           Certifique cualquier contenido publicado en Internet
         </h1>
       </div>
       {/* detalles */}
       <div className="max-w-[1080px] mx-auto p-8">
-        <h1 className="font-bold text-3xl">¿Qué es Safe Certify Web?</h1>
-        <p className="text-gray-800 font-medium mb-6">
+        <h1 className="font-bold text-3xl">¿Qué es Certify Web?</h1>
+        <p className="text-gray-800 font-medium mb-6 pt-4">
           Certify Web es un servicio para certificar la publicación de un
           contenido en Internet indicando URL, fecha y hora.
         </p>
@@ -51,9 +51,11 @@ const web = () => {
         </p>
         <UploadDropzone />
       </div>
-      <div className="max-w-[1080px] mx-auto p-8">
-        <h1 className="font-bold text-3xl">¿Cómo funciona?</h1>
-        <p className="text-gray-800 font-medium mb-6">
+      <div className="max-w-[1080px] mx-auto p-6">
+        <h1 className="font-bold md:text-5xl text-3xl text-center">
+          ¿Cómo funciona?
+        </h1>
+        <p className="text-gray-800 font-medium mb-6 pt-4">
           Depende del tipo de página y de la información cuya publicación se
           quiera certificar: <br />
           <b>

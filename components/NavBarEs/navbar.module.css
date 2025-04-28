@@ -1,21 +1,34 @@
+/* =====  NAVBAR  ===== */
+
+/* ----------  Desktop / default  ---------- */
 .header-container {
-  background-color: transparent !important;
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  padding: 5px 0px;
+  inset: 0 0 auto 0; /* top-0 left-0 right-0 */
+  padding: 8px 0;
   z-index: 1000;
+  background: transparent;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .header-container.sticky {
-  background-color: black !important;
+  background: #000; /* negro sólido al hacer scroll   */
+  box-shadow: 0 2px 6px rgb(0 0 0 / 0.25);
 }
 
-.header-container .row-qh {
-  width: 100%;
+/* layout interno */
+.row-qh,
+.header-logo,
+.header-icons {
   display: flex;
+  align-items: center;
+}
+
+.row-qh {
   justify-content: space-between;
+  width: 100%;
+}
+.header-icons {
+  gap: 20px;
 }
 
 .linkswraper {
@@ -25,93 +38,76 @@
 }
 
 .linkswraper li {
-  height: max-content;
   list-style: none;
-  text-align: center;
-}
-
-.linkswraper li::marker {
-  display: none;
-  content: "";
 }
 
 .nav-link {
   display: block;
-  text-decoration: none;
-  padding: 0.5rem 1rem 0.5rem 1rem;
+  padding: 0.5rem 1rem;
   color: #fff;
   font-weight: 700;
   font-size: 16px;
   text-transform: capitalize;
-  cursor: pointer;
-  transition: all 0.5s;
+  text-decoration: none;
+  transition: color 0.2s ease, background-color 0.2s ease;
 }
 
-.header-icons {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
+.nav-link:hover {
+  color: #ffd140;
+} /* dorado al pasar el cursor */
 
-.header-icons .icon {
-  color: #fff;
-}
-
-@media only screen and (min-width: 768px) {
+/* Oculta el icono menú en desktop */
+@media (min-width: 768px) {
   .toggle-icon {
     display: none;
   }
 }
 
+/* ----------  Mobile  (<650 px) ---------- */
 @media (max-width: 650px) {
-  /* css de nabvar */
   .header-container {
-    padding: 10px 20px !important;
+    padding: 10px 20px;
   }
 
+  /* logo + hamburger en la misma fila */
   .header-logo {
-    display: flex;
-    align-items: center;
     justify-content: space-between;
-    color: #fff !important;
     width: 100%;
   }
 
-  .header-derecha {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    color: #fff !important;
-    width: 100%;
-  }
-
+  /* panel lateral (hamburguesa) */
   .linkswraper {
     position: fixed;
-    top: 120px;
+    top: 60px; /* debajo del header */
     left: 0;
     right: 0;
     flex-direction: column;
-    background-color: #fff;
-    width: 0;
-    padding: 0;
-    transition: all ease-in 0.5s;
+    gap: 0;
+    background: #000; /* ⬅️⬅️  NEGRO  */
     visibility: hidden;
+    width: 0;
     overflow: hidden;
+    transition: all 0.35s ease;
   }
 
   .linkswraper.active {
     visibility: visible;
-    display: flex !important;
     width: 100%;
-    padding: 0 5px;
+    padding: 16px 0;
+  }
+
+  .linkswraper li {
+    width: 100%;
   }
 
   .linkswraper .nav-link {
-    color: #000;
-    padding: 20px 0px !important;
+    color: #fff; /* ⬅️⬅️  BLANCO  */
+    padding: 18px 24px;
+    width: 100%;
   }
 
+  /* Íconos sociales opcionalmente ocultos */
   .header-icons {
-    display: none !important;
+    display: none;
   }
 }

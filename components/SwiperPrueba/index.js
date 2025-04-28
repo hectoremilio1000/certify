@@ -104,7 +104,7 @@ const MySwiper = () => {
                 <div className="font-bold text-xl bg-primary rounded-full px-3 py-2 text-white">
                   CERTIFY
                 </div>
-                <h1 className="text-5xl text-white uppercase font-bold">
+                <h1 className="md:text-5xl text-3xl text-white uppercase font-bold">
                   Certifique cualquier contenido <br /> publicado en Internet
                 </h1>
 

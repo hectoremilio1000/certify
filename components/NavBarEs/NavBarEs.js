@@ -11,6 +11,7 @@ import {
   FaMicrophoneAlt,
   FaMobileAlt,
   FaVideo,
+  FaUser,
 } from "react-icons/fa";
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 import "./navbar.module.css";
@@ -58,7 +59,7 @@ function NavBar() {
 
   return (
     <div className={navbar ? "header-container sticky" : "header-container"}>
-      <div className="max-w-[1184px] flex items-center justify-between flex-wrap w-full mx-auto py-4 mt-2  px-4 md:px-6">
+      <div className="max-w-[1184px] flex items-center justify-between flex-wrap w-full mx-auto py-4 md:mt-2 mt-6  px-4 md:px-6">
         {/* <Link href="/">
         <Image src={logo} width={100}
           alt="llorona" priority />
@@ -66,12 +67,13 @@ function NavBar() {
       </Link> */}
         <div className="header-logo">
           <div>
-            <Link href="/" className="logo ">
+            <Link href="/" className="flex items-center">
               <Image
                 src={logo}
-                width={150}
-                alt="Impulso Restaurantero"
+                alt="Certify logo"
                 priority
+                /*  w-20 = 80 px   md:w-36 = 144 px   lg:w-40 = 160 px  */
+                className="w-20 md:w-36 lg:w-40 h-auto"
               />
             </Link>
           </div>
@@ -85,11 +87,11 @@ function NavBar() {
             />
           </div>
         </div>
-        <div
-          onClick={() => {
-            handleNavbar();
-          }}
-          className={linkswraper ? "linkswraper active" : "linkswraper"}
+        <ul
+          /* cierra menú al dar clic en cualquier link            ↓ */
+          onClick={() => setLinkswraper(false)}
+          /* añade bg-black sólo cuando el menú está abierto      ↓ */
+          className={`linkswraper ${linkswraper ? "active bg-black" : ""}`}
         >
           <>
             {" "}
@@ -98,19 +100,24 @@ function NavBar() {
                 <li key="0">
                   <Link
                     href="/web"
-                    className="px-3 py-2 rounded-full flex gap-3 items-center text-white border-2 border-white"
+                    className="px-3 py-2 rounded-full flex items-center justify-center
+                 gap-0 md:gap-3 text-black md:text-white
+                 md:border-2 md:border-white"
                   >
-                    <FaVideo />
-                    WEB
+                    <FaVideo className="hidden md:block" />
+                    <span className="font-bold md:font-normal">WEB</span>
                   </Link>
                 </li>
+
                 <li key="1">
                   <Link
                     href="/app"
-                    className="px-3 py-2 rounded-full flex gap-3 items-center text-white border-2 border-white"
+                    className="px-3 py-2 rounded-full flex items-center justify-center
+                 gap-0 md:gap-3 text-black md:text-white
+                 md:border-2 md:border-white"
                   >
-                    <FaMobileAlt />
-                    App
+                    <FaMobileAlt className="hidden md:block" />
+                    <span className="font-bold md:font-normal">APP</span>
                   </Link>
                 </li>
                 {/* <li key="2">
@@ -133,9 +140,16 @@ function NavBar() {
                 <li key="4">
                   <Link
                     href="/login"
-                    className="px-3 py-2 text-nowrap rounded-full text-gray-900 bg-gray-300 font-bold"
+                    className="px-3 py-2 rounded-full flex items-center justify-center
+               gap-0 md:gap-3
+               text-black font-bold            /* mobile */
+               md:text-gray-900 md:font-normal /* desktop */
+               md:bg-gray-300 md:border-2 md:border-gray-300"
                   >
-                    ALTA O INICIA SESIÓN
+                    {/* Ícono solo visible en desktop/tablet */}
+                    <FaUser className="hidden md:block" />
+
+                    <span className="font-bold md:font-normal">LOGIN</span>
                   </Link>
                 </li>
               </>
@@ -169,7 +183,7 @@ function NavBar() {
               </>
             )}
           </>
-        </div>
+        </ul>
       </div>
     </div>
   );

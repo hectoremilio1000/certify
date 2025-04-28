@@ -37,16 +37,16 @@ const app = () => {
           src="https://www.safestamper.com/public/img/photo-photo.jpg"
           alt=""
         />
-        <h1 className="text-5xl font-bold text-center">
+        <h1 className="md:text-5xl text-3xl font-bold text-center">
           Certifique fotografías y grabaciones geolocalizadas
         </h1>
-        <p className="text-5xl font-normal text-center">
+        <p className="md:text-5xl text-3xl font-normal text-center">
           desde su dispositivo móvil
         </p>
       </div>
       {/* detalles */}
       <div className="max-w-[1080px] mx-auto p-8">
-        <h1 className="font-bold text-3xl">¿Qué es Safe Certify App?</h1>
+        <h1 className="font-bold md:text-5xl text-3xl">¿Qué es Certify App?</h1>
         <p className="text-gray-800 font-medium mb-6">
           Una vez registrado como usuario de Safe Stamper, descargue e instale
           la aplicación de Safe Stamper en el dispositivo móvil que hará las

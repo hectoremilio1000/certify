@@ -114,14 +114,38 @@ export default function Home() {
       {/* HEAD con meta tags */}
       {espa ? (
         <Head>
-          <title>Certify | Certifica tu contenido </title>
-          <link rel="icon" href="../favicon.png" />
-          <meta name="description" content="Certifica tu contenido" />
-          <meta property="og:title" content="GrowthSuite" />
-          <meta property="og:description" content="Certifica tu contenido" />
-          <meta property="og:url" content="" />
+          <title>Certify | Certifica tu contenido</title>
+          <link rel="icon" href="/favicon.png" />
+          <meta
+            name="description"
+            content="Convierte cualquier imagen en una prueba legalmente sólida con Certify."
+          />
+
+          {/* Open Graph */}
+          <meta property="og:title" content="Certify" />
+          <meta
+            property="og:description"
+            content="Certifica tu contenido con fecha, hora y ubicación blindadas."
+          />
+          <meta
+            property="og:image"
+            content="https://certify-seven.vercel.app/og-certify.jpg"
+          />
+          <meta property="og:url" content="https://certify-seven.vercel.app/" />
           <meta property="og:type" content="website" />
-          <meta property="og:image" content="" />
+          <meta property="og:site_name" content="Certify" />
+
+          {/* Twitter Card (opcional, pero ayuda) */}
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content="Certify" />
+          <meta
+            name="twitter:description"
+            content="Certifica tu contenido con fecha, hora y ubicación blindadas."
+          />
+          <meta
+            name="twitter:image"
+            content="https://certify-seven.vercel.app/og-certify.jpg"
+          />
         </Head>
       ) : (
         // Versión en inglés (opcional)
@@ -149,8 +173,8 @@ export default function Home() {
       <NavBar />
 
       <MySwiper />
-      <div className="max-w-[1080px] mx-auto p-8 mt-[10vh]">
-        <h1 className="text-5xl font-bold text-center">
+      <div className="max-w-[1080px] mx-auto p-4 mt-[8vh]">
+        <h1 className="md:text-5xl text-4xl font-bold text-center">
           Evidencia digital a un clic
         </h1>
       </div>
@@ -164,9 +188,9 @@ export default function Home() {
         </p>
       </div>
       {/* detalles */}
-      <div className="max-w-[1080px] mx-auto p-8">
+      <div className="max-w-[1080px] mx-auto p-6">
         <h1 className="font-bold text-3xl">Dos maneras de Certificar</h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 pt-4">
           <p className="w-full text-gray-800 font-medium mb-6">
             Certify Web
             <Link
@@ -222,8 +246,10 @@ export default function Home() {
           confiable y firma electrónica reconocida.
         </p>
         <div className="max-w-[1080px] mx-auto p-8 mb-6">
-          <p className="text-gray-800 text-center font-medium">Empieza Ahora</p>
-          <h1 className="text-center text-2xl font-bold">
+          <p className="text-gray-800 text-center font-medium md:text-5xl text-3xl">
+            Empieza Ahora
+          </p>
+          <h1 className="text-center text-xl font-bold pt-2">
             Descargue la app para su dispositivo
           </h1>
           <div className="w-full grid grid-cols-2 gap-4">

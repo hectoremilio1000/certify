@@ -48,7 +48,7 @@ export default function UploadDropzone() {
         <div className="flex flex-col items-center">
           <div className="text-white text-4xl mb-4">⬆️</div>
           <p className="text-white font-semibold">
-            Drag & Drop to Upload Files
+            Arrastra y suelta para subir archivos
           </p>
           <p className="text-white">OR</p>
           <button
@@ -59,7 +59,7 @@ export default function UploadDropzone() {
               openFileDialog();
             }}
           >
-            Browse Files
+            Buscar archivos
           </button>
         </div>
       </div>
@@ -67,7 +67,7 @@ export default function UploadDropzone() {
       {files.length > 0 && (
         <div className="mt-6 w-full max-w-md">
           <h3 className="text-lg font-bold mb-2 text-gray-700">
-            Files Selected:
+            Archivos seleccionados:
           </h3>
           <ul className="space-y-2">
             {files.map((file, index) => (
