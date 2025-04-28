@@ -114,23 +114,14 @@ export default function Home() {
       {/* HEAD con meta tags */}
       {espa ? (
         <Head>
-          <title>Certify | Desarrollo de Software a la Medida </title>
+          <title>Certify | Certifica tu contenido </title>
           <link rel="icon" href="../favicon.png" />
-          <meta
-            name="description"
-            content="Expertos en desarrollo de software, apps móviles y soluciones POS."
-          />
+          <meta name="description" content="Certifica tu contenido" />
           <meta property="og:title" content="GrowthSuite" />
-          <meta
-            property="og:description"
-            content="Expertos en desarrollo de software y POS para negocios."
-          />
-          <meta property="og:url" content="https://www.growthsuite.com/" />
+          <meta property="og:description" content="Certifica tu contenido" />
+          <meta property="og:url" content="" />
           <meta property="og:type" content="website" />
-          <meta
-            property="og:image"
-            content="https://imagenesrutalab.s3.amazonaws.com/impulsoRestaurantero/logo/logoSoloImpulsoRestaurantero.png"
-          />
+          <meta property="og:image" content="" />
         </Head>
       ) : (
         // Versión en inglés (opcional)

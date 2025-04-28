@@ -113,22 +113,22 @@ function NavBar() {
                     App
                   </Link>
                 </li>
-                <li key="2">
+                {/* <li key="2">
                   <Link
                     href="/precios"
                     className="nav-link hover:text-yellow-400"
                   >
                     PRECIOS
                   </Link>
-                </li>
-                <li key="1">
+                </li> */}
+                {/* <li key="1">
                   <Link
                     href="/certificacion"
                     className="px-3 py-2 text-nowrap rounded-full text-white bg-primary font-bold"
                   >
                     CERTIFICACIÓN EXPRESS
                   </Link>
-                </li>
+                </li> */}
 
                 <li key="4">
                   <Link

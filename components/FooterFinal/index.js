@@ -15,27 +15,23 @@ function FooterFinal() {
               className="-my-2 flex flex-wrap justify-center"
               style={{ width: "100%" }}
             >
-              <div className=" py-2">
+              {/* <div className=" py-2">
                 <Link
                   href="/precios"
                   className="nav-link hover:text-yellow-400"
                 >
                   PRECIOS
                 </Link>
-              </div>
-              <div className=" py-2">
+              </div> */}
+              {/* <div className=" py-2">
                 <Link
                   href="/precios"
                   className="nav-link hover:text-yellow-400"
                 >
                   CERTIFICACIÓN EXPRESS
                 </Link>
-              </div>
-              <div className="py-2">
-                <Link href="/login" className="nav-link hover:text-yellow-400">
-                  LOGIN
-                </Link>
-              </div>
+              </div> */}
+
               <div className="py-2">
                 <Link href="/web" className="nav-link hover:text-primary">
                   WEB
@@ -45,6 +41,11 @@ function FooterFinal() {
               <div className="px-5 py-2">
                 <Link href="/app" className="nav-link hover:text-primary">
                   APP
+                </Link>
+              </div>
+              <div className="py-2">
+                <Link href="/login" className="nav-link hover:text-yellow-400">
+                  ALTA O INICIO DE SESIÓN
                 </Link>
               </div>
             </nav>

@@ -119,7 +119,7 @@ const MySwiper = () => {
                 <div style={{ display: "flex", justifyContent: "center" }}>
                   {/* Botón que ahora redirige a WhatsApp en lugar de abrir modal */}
                   <a
-                    href="/certify"
+                    href="/web"
                     target="_blank"
                     rel="noopener noreferrer"
                     className={styles.button4}
