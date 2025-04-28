@@ -20,6 +20,7 @@ import WhatsappButton from "../components/WhatsappButton";
 
 import { InlineWidget } from "react-calendly";
 import { Button } from "antd";
+import { FaMobileAlt, FaVideo } from "react-icons/fa";
 
 // Carga perezosa (sin SSR) para el Swiper
 const MySwiper = dynamic(() => import("../components/SwiperPrueba"), {
@@ -157,6 +158,110 @@ export default function Home() {
       <NavBar />
 
       <MySwiper />
+      <div className="max-w-[1080px] mx-auto p-8 mt-[10vh]">
+        <h1 className="text-5xl font-bold text-center">
+          Evidencia digital a un clic
+        </h1>
+      </div>
+      {/* detalles */}
+
+      <div className="max-w-[1080px] mx-auto p-8">
+        <p className="text-gray-800 font-medium mb-6">
+          Convierte cualquier imagen en una prueba legalmente sólida. Con
+          Certify blindas fecha, hora y ubicación sin complicaciones: elige si
+          lo haces desde la web o con la cámara de tu móvil.
+        </p>
+      </div>
+      {/* detalles */}
+      <div className="max-w-[1080px] mx-auto p-8">
+        <h1 className="font-bold text-3xl">Dos maneras de Certificar</h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <p className="w-full text-gray-800 font-medium mb-6">
+            Certify Web
+            <Link
+              href="/web"
+              className="w-full px-3 py-2 rounded-full flex gap-3 items-center text-primary border-2 border-primary"
+            >
+              <FaVideo />
+              WEB
+            </Link>
+          </p>
+          <p className="w-full text-gray-800 font-medium mb-6">
+            Certify App
+            <Link
+              href="/app"
+              className="w-full px-3 py-2 rounded-full flex gap-3 items-center text-primary border-2 border-primary"
+            >
+              <FaMobileAlt />
+              App
+            </Link>
+          </p>
+        </div>
+      </div>
+      {/* detalles */}
+      <div className="max-w-[1080px] mx-auto p-8">
+        <h1 className="font-bold text-3xl">¿Qué hace?</h1>
+        <p className="text-gray-800 font-medium mb-6">
+          Sube una foto o PDF desde tu navegador y en segundos recibes un PDF
+          certificado con huella digital y sello de tiempo. Abre la app, toma la
+          foto o video y obtén el certificado con geo-referencia incorporada.
+        </p>
+        <p className="text-gray-800 font-medium mb-6">
+          Ideal para… Contratos firmados, inventarios, piezas creativas,
+          entregas de servicio. Inspecciones en campo, siniestros, pruebas de
+          cumplimiento, contenido periodístico. Resultado Documento PDF con
+          hash, timestamp y firma electrónica de Certify. Idem, más coordenadas
+          GPS y metadatos del dispositivo.
+        </p>
+        <img
+          className="w-full object-cover h-[250px]"
+          src="https://www.safestamper.com/public/img/photo-sign.jpg"
+          alt=""
+        />
+      </div>
+      {/* detalles */}
+      <div className="max-w-[1080px] mx-auto p-8">
+        <h1 className="font-bold text-3xl">¿Por qué elegir Certify?</h1>
+        <p className="text-gray-800 font-medium mb-6">
+          Valor probatorio en minutos: cumple con estándares de validez jurídica
+          nacionales e internacionales. Integridad garantizada: usamos
+          criptografía avanzada para sellar cada archivo. Privacidad primero:
+          tus evidencias se guardan cifradas; sólo tú decides quién las ve.
+          Listo para tribunales: nuestros certificados incluyen sello de tiempo
+          confiable y firma electrónica reconocida.
+        </p>
+        <div className="max-w-[1080px] mx-auto p-8 mb-6">
+          <p className="text-gray-800 text-center font-medium">Empieza Ahora</p>
+          <h1 className="text-center text-2xl font-bold">
+            Descargue la app para su dispositivo
+          </h1>
+          <div className="w-full grid grid-cols-2 gap-4">
+            <div className="box flex justify-center">
+              <div className="rounded bg-black text-white inline-block">
+                <img
+                  className="w-70"
+                  src="https://www.safestamper.com/public/img/apps/es/android.png"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div className="box flex justify-center">
+              <div className="rounded bg-black text-white inline-block">
+                <img
+                  className="w-70"
+                  src="https://www.safestamper.com/public/img/apps/es/ios.png"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <p className="text-gray-800 font-medium mb-6">
+          Con Certify proteges tu trabajo, tu reputación y tus derechos, sin
+          importar dónde estés. ¡Certifica en línea o desde tu móvil y descansa
+          tranquilo!
+        </p>
+      </div>
     </div>
   );
 }

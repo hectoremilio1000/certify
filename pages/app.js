@@ -31,7 +31,12 @@ const app = () => {
       <NavBar />
 
       <div className="w-full py-[70px] px-2 bg-black"></div>
-      <div className="max-w-[1080px] mx-auto p-8">
+      <div className="relative max-w-[1080px] mx-auto p-8">
+        <img
+          className="absolute bottom-0 object-cover opacity-10 z-10 w-full h-full top-0 left-0 right-0"
+          src="https://www.safestamper.com/public/img/photo-photo.jpg"
+          alt=""
+        />
         <h1 className="text-5xl font-bold text-center">
           Certifique fotografías y grabaciones geolocalizadas
         </h1>

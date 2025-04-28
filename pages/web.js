@@ -2,6 +2,7 @@ import React from "react";
 import Head from "next/head";
 import NavBar from "../components/NavBarEs/NavBarEs";
 import Link from "next/link";
+import UploadDropzone from "../components/WebPage/UploadDropzone";
 
 const web = () => {
   return (
@@ -48,12 +49,7 @@ const web = () => {
           publicación de obras con derechos de propiedad intelectual,
           incumplimiento de condiciones de venta, etc.
         </p>
-        <Link
-          className="px-3 py-2 rounded-full text-white bg-primary"
-          href={"/certify"}
-        >
-          Certificar
-        </Link>
+        <UploadDropzone />
       </div>
       <div className="max-w-[1080px] mx-auto p-8">
         <h1 className="font-bold text-3xl">¿Cómo funciona?</h1>
