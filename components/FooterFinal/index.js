@@ -45,7 +45,7 @@ function FooterFinal() {
               </div>
               <div className="py-2">
                 <Link href="/login" className="nav-link hover:text-yellow-400">
-                  ALTA O INICIO DE SESIÓN
+                  LOGIN
                 </Link>
               </div>
             </nav>
