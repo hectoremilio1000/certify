@@ -101,67 +101,36 @@ const MySwiper = () => {
           <SwiperSlide>
             <div className={styles.content}>
               <div className={styles["block-hero"]}>
-                <div className={styles.subtitle}>GROWTHSUITE</div>
-                <h1 className={`${styles["heading-13"]} ${styles.desktop}`}>
-                  ¿BUSCAS <br /> SOFTWARE <br /> A LA MEDIDA?
-                </h1>
-                <h1 className={`${styles["heading-13"]} ${styles.mobile}`}>
-                  ¿BUSCAS <br /> SOFTWARE <br /> A LA MEDIDA?
+                <div className="font-bold text-xl bg-primary rounded-full px-3 py-2 text-white">
+                  CERTIFY
+                </div>
+                <h1 className="text-5xl text-white uppercase font-bold">
+                  Certifique cualquier contenido <br /> publicado en Internet
                 </h1>
 
                 <div className={`${styles.largeText} ${styles.desktop}`}>
-                  Somos expertos en crear aplicaciones web y móviles totalmente
-                  personalizadas para tu negocio.
-                </div>
-                <div className={`${styles.largeText} ${styles.mobile}`}>
-                  Moderniza tu empresa con tecnología hecha a la medida.
+                  Certify es un servicio para certificar la publicación de un
+                  contenido en Internet indicando URL, fecha y hora. Sirve como
+                  una sólida prueba para casos de difamación, ciberacoso,
+                  publicación de obras con derechos de propiedad intelectual,
+                  incumplimiento de condiciones de venta, etc.
                 </div>
 
                 <div style={{ display: "flex", justifyContent: "center" }}>
                   {/* Botón que ahora redirige a WhatsApp en lugar de abrir modal */}
                   <a
-                    href="https://wa.me/5215531491808?text=Hola%20quiero%20un%20software%20exitoso%20con%20growthsuite"
+                    href="/certify"
                     target="_blank"
                     rel="noopener noreferrer"
                     className={styles.button4}
                   >
-                    ¡Quiero más información!
+                    Certificar
                   </a>
                 </div>
               </div>
             </div>
             <div className={styles.blueGradientHero}></div>
           </SwiperSlide>
-
-          {/* Slide 2 - POS para Restaurantes (opcional como otra solución) */}
-          {/* <SwiperSlide>
-          <div className={styles.content}>
-            <div className={styles["block-hero"]}>
-              <div className={styles.subtitle}>GROWTHSUITE POS</div>
-              <h1 className={`${styles["heading-13"]} ${styles.desktop}`}>
-                SOLUCIÓN <br /> INTEGRAL <br /> PARA RESTAURANTES
-              </h1>
-              <h1 className={`${styles["heading-13"]} ${styles.mobile}`}>
-                SOLUCIÓN <br /> INTEGRAL <br /> PARA RESTAURANTES
-              </h1>
-
-              <div className={`${styles.largeText} ${styles.desktop}`}>
-                Controla inventarios, gestiona mesas y aumenta tus ventas con
-                nuestra plataforma POS especializada.
-              </div>
-              <div className={`${styles.largeText} ${styles.mobile}`}>
-                Lleva tu restaurante al siguiente nivel con GrowthSuite POS.
-              </div>
-
-              <div style={{ display: "flex", justifyContent: "center" }}>
-                <button className={styles.button4} onClick={toggleModal}>
-                  ¡Probar Gratis!
-                </button>
-              </div>
-            </div>
-          </div>
-          <div className={styles.blueGradientHero}></div>
-        </SwiperSlide> */}
         </Swiper>
 
         {/* Modal para recolectar datos */}

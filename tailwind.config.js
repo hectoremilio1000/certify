@@ -19,7 +19,7 @@ module.exports = {
     },
     extend: {
       colors: {
-        primary: "#007BFF", // Azul GrowthSuite
+        primary: "#e8ad32", // Azul GrowthSuite
         secondary: "#FFD700", // Dorado GrowthSuite
       },
       fontFamily: {

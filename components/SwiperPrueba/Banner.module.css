@@ -110,10 +110,10 @@
   background-image: radial-gradient(
       circle at 50% -360%,
       rgba(18, 19, 21, 0.9) 83%,
-      rgba(0, 123, 255, 0.9) 91%,
+      rgba(232, 173, 50, 0.9) 91%,
       #000 98%
     ),
-    url("https://imagenesrutalab.s3.us-east-1.amazonaws.com/growthsuite/banner/softwaretumedidagrowth.png");
+    url("https://www.safestamper.com/public/img/photo-web.jpg");
   background-position: center;
   background-size: cover;
   width: 100%;
@@ -209,7 +209,6 @@
 /* BOTÓN principal (antes era un gradiente dorado) 
    Lo cambiamos a un gradiente azul->dorado */
 .button4 {
-  color: #007bff;
   text-align: center;
   letter-spacing: 0.025em;
   background-color: #ffd700; /* Fondo dorado */

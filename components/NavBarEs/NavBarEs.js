@@ -1,12 +1,17 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import Image from "next/image";
-import logo from "../../data/imagenes/logoGrowthSuite copyAzul.png";
+import logo from "../../data/imagenes/logo.jpeg";
 
 // css navbar
 
 // icons react
-import { FaAlignRight } from "react-icons/fa";
+import {
+  FaAlignRight,
+  FaMicrophoneAlt,
+  FaMobileAlt,
+  FaVideo,
+} from "react-icons/fa";
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 import "./navbar.module.css";
 import { useRouter } from "next/navigation";
@@ -78,19 +83,6 @@ function NavBar() {
                 handleNavbar();
               }}
             />
-            {/* <div
-              onClick={onIdiomaIngles}
-              className="hover:text-amber-600 toggle-icon cursor-pointer mr-2"
-            >
-              <img src={usFlag} width={20} height={20} />
-            </div> */}
-
-            {/* <div
-              onClick={onIdiomaEspa}
-              className="hover:text-amber-600 cursor-pointer toggle-icon"
-            >
-              <img src={mxFlag} width={20} height={20} />
-            </div> */}
           </div>
         </div>
         <div
@@ -103,127 +95,80 @@ function NavBar() {
             {" "}
             {espa ? (
               <>
-                {" "}
                 <li key="0">
-                  <Link href="/" className="nav-link hover:text-yellow-400">
-                    Inicio
+                  <Link
+                    href="/web"
+                    className="px-3 py-2 rounded-full flex gap-3 items-center text-white border-2 border-white"
+                  >
+                    <FaVideo />
+                    WEB
                   </Link>
                 </li>
                 <li key="1">
                   <Link
-                    href="/casosexito"
-                    className="nav-link hover:text-yellow-400"
+                    href="/app"
+                    className="px-3 py-2 rounded-full flex gap-3 items-center text-white border-2 border-white"
                   >
-                    Casos de éxito
+                    <FaMobileAlt />
+                    App
                   </Link>
                 </li>
-                {/* <li key="2">
+                <li key="2">
                   <Link
-                    href="/comolohacemos"
+                    href="/precios"
                     className="nav-link hover:text-yellow-400"
                   >
-                    Cómo lo hacemos
+                    PRECIOS
                   </Link>
-                </li> */}
-                {/* <li key="3">
+                </li>
+                <li key="1">
                   <Link
-                    href="/contacto"
-                    className="nav-link hover:text-yellow-400"
+                    href="/certificacion"
+                    className="px-3 py-2 text-nowrap rounded-full text-white bg-primary font-bold"
                   >
-                    Contacto
+                    CERTIFICACIÓN EXPRESS
                   </Link>
-                </li> */}
+                </li>
+
                 <li key="4">
                   <Link
-                    href="/cotiza"
-                    className="nav-link hover:text-yellow-400"
+                    href="/login"
+                    className="px-3 py-2 text-nowrap rounded-full text-gray-900 bg-gray-300 font-bold"
                   >
-                    Cotiza
-                  </Link>
-                </li>
-                <li key="5">
-                  <Link
-                    href="/contacto"
-                    className="nav-link hover:text-yellow-400"
-                  >
-                    Contacto
+                    ALTA O INICIA SESIÓN
                   </Link>
                 </li>
               </>
             ) : (
               <>
-                {" "}
                 <li key="0">
-                  <Link href="/" className="nav-link hover:text-emerald-500">
-                    Home
+                  <Link
+                    href="/precios"
+                    className="nav-link hover:text-yellow-400"
+                  >
+                    PRECIOS
                   </Link>
                 </li>
                 <li key="1">
                   <Link
-                    href="/reserva"
-                    className="nav-link hover:text-emerald-500"
+                    href="/certificacion"
+                    className="px-3 py-2 rounded-full text-white bg-primary"
                   >
-                    Case Studies
+                    CERTIFICACIÓN EXPRESS
                   </Link>
                 </li>
-                <li key="2">
+
+                <li key="4">
                   <Link
-                    href="/menullorona"
-                    className="nav-link hover:text-emerald-500"
+                    href="/login"
+                    className="nav-link hover:text-yellow-400"
                   >
-                    About
+                    ALTA O INICIA SESIÓN
                   </Link>
                 </li>
-                <li key="3">
-                  <Link
-                    href="/mezcal"
-                    className="nav-link hover:text-emerald-500"
-                  >
-                    Contact
-                  </Link>
-                </li>
-                {/* <li key="4">
-                  <Link
-                    href="/salsavivo"
-                    className="nav-link hover:text-emerald-500"
-                  >
-                    Live salsa
-                  </Link>
-                </li> */}
               </>
             )}
           </>
-        </div>
-        <div className="header-icons">
-          <a
-            key="0"
-            href="https://www.facebook.com/profile.php?id=61572817134152"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaFacebook className="icon facebook-icon hover:text-emerald-500 cursor-pointer" />
-          </a>
-          <a
-            key="1"
-            href="https://www.instagram.com/impulsorestaurantero?igsh=ODczMzE2bTVnbnB3&utm_source=qr"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaInstagram className="icon instagram-icon hover:text-emerald-500" />
-          </a>
-          {/* <div
-            onClick={onIdiomaIngles}
-            className="hover:text-emerald-500 cursor-pointer"
-          >
-            <img src={usFlag} width={20} height={20} />
-          </div>
-
-          <div
-            onClick={onIdiomaEspa}
-            className="hover:text-emerald-500 cursor-pointer"
-          >
-            <img src={mxFlag} width={20} height={20} />
-          </div> */}
         </div>
       </div>
     </div>
