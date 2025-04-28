@@ -173,14 +173,14 @@ export default function Home() {
       <NavBar />
 
       <MySwiper />
-      <div className="max-w-[1080px] mx-auto p-4">
-        <h1 className="md:text-5xl text-4xl font-bold text-center">
+      <div className="max-w-[1080px] mx-auto p-4 md:mt-[8vh]">
+        <h1 className="md:text-5xl text-4xl md:p-4 font-bold text-center">
           Evidencia digital a un clic
         </h1>
       </div>
       {/* detalles */}
 
-      <div className="max-w-[1080px] mx-auto p-6">
+      <div className="max-w-[1080px] mx-auto p-8">
         <p className="text-gray-800 font-medium mb-6">
           Convierte cualquier imagen en una prueba legalmente sólida. Con
           Certify blindas fecha, hora y ubicación sin complicaciones: elige si
