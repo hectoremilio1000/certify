@@ -110,7 +110,7 @@
   background-image: radial-gradient(
       circle at 50% -360%,
       rgba(18, 19, 21, 0.9) 83%,
-      rgba(232, 173, 50, 0.9) 91%,
+      rgba(0, 71, 255, 0.9) 91%,
       #000 98%
     ),
     url("https://www.safestamper.com/public/img/photo-web.jpg");
@@ -211,7 +211,7 @@
 .button4 {
   text-align: center;
   letter-spacing: 0.025em;
-  background-color: #ffd700; /* Fondo dorado */
+  background-color: #0047ff; /* Fondo dorado */
   border-radius: 14px;
   padding: 0.9em 1.8em;
   font-size: 1.42em;
@@ -221,6 +221,7 @@
     background-color 0.4s ease; /* Transición suave del fondo */
   box-shadow: 0 7px 80px -12px #000, inset 0 0 rgba(19, 36, 54, 0),
     inset 0 0 rgba(19, 36, 54, 0);
+  color: white;
 }
 
 .button4:hover {

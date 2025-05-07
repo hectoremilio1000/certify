@@ -54,7 +54,7 @@ export default function Login() {
       <NavBar />
 
       {/* Hero / encabezado */}
-      <header className="w-full bg-black py-[70px] px-2"></header>
+      <header className="w-full bg-darkHero py-[70px] px-2"></header>
       <div>
         <h1 className="text-black text-center text-4xl font-bold pt-5">
           Inicia sesión en Certify

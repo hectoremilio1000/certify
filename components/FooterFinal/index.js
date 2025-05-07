@@ -9,7 +9,7 @@ function FooterFinal() {
   return (
     <>
       {espa ? (
-        <footer className=" fondo2 py-12">
+        <footer className="bg-primary py-12">
           <div className="max-w-screen-lg mx-auto px-2 sm:px-2 lg:px-8">
             <nav
               className="-my-2 flex flex-wrap justify-center"
@@ -33,18 +33,18 @@ function FooterFinal() {
               </div> */}
 
               <div className="py-2">
-                <Link href="/web" className="nav-link hover:text-primary">
+                <Link href="/web" className="nav-link hover:text-primaryLt">
                   WEB
                 </Link>
               </div>
 
               <div className="px-5 py-2">
-                <Link href="/app" className="nav-link hover:text-primary">
+                <Link href="/app" className="nav-link hover:text-primaryLt">
                   APP
                 </Link>
               </div>
               <div className="py-2">
-                <Link href="/login" className="nav-link hover:text-yellow-400">
+                <Link href="/login" className="nav-link hover:text-primaryLt">
                   LOGIN
                 </Link>
               </div>

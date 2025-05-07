@@ -18,17 +18,21 @@ module.exports = {
       "5xl": "3.052rem",
     },
     extend: {
+      /* ---------- NUEVOS COLORES ---------- */
       colors: {
-        primary: "#e8ad32", // Azul GrowthSuite
-        secondary: "#FFD700", // Dorado GrowthSuite
+        primary: "#0047FF", // Royal Blue – logo y títulos
+        primaryLt: "#00B2FF", // Azure – hovers, iconos
+        darkHero: "#0047FF", // Charcoal – hero overlay
+        textMain: "#2E2E32", // Charcoal-900 – copy largo
+        cta: "#FFC727", // Amber-500 – botón amarillo
+      },
+      /* Gradiente diagonal para el check / hero */
+      backgroundImage: {
+        "royal-azure": "linear-gradient(135deg, #0047FF 0%, #00B2FF 100%)",
       },
       fontFamily: {
         sans: ["Montserrat", "sans-serif"],
       },
-      // Opcional si necesitas más personalización, por ejemplo:
-      // gridTemplateColumns: {
-      //   '3cards': 'repeat(3, minmax(0, 1fr))',
-      // },
     },
   },
   plugins: [require("@tailwindcss/aspect-ratio")],

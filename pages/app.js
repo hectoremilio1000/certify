@@ -30,7 +30,7 @@ const app = () => {
 
       <NavBar />
 
-      <div className="w-full py-[70px] px-2 bg-black"></div>
+      <div className="w-full py-[70px] px-2 bg-darkHero"></div>
       <div className="relative max-w-[1080px] mx-auto p-8">
         <img
           className="absolute bottom-0 object-cover opacity-10 z-10 w-full h-full top-0 left-0 right-0"
