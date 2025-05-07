@@ -3,25 +3,25 @@
 import { useEffect, useState } from "react";
 
 /**
- * Certificación gratuita:
- * 1. Solo acepta imágenes (JPG/PNG/WebP).
- * 2. Añade watermark desde /public/favicon.png.
- * 3. Permite descargar PNG final.
+ * Certificación gratuita comprimida + compartir
  */
 export default function FreeCertification({ file, onBack }) {
-  const [preview, setPreview] = useState(null);
+  const [previewURL, setPreviewURL] = useState(null); // object-URL de la imagen final
+  const [blob, setBlob] = useState(null); // blob para Web Share
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     if (!file) return;
 
-    /* ----------- tipo de archivo ----------- */
     if (!file.type.startsWith("image/")) {
       setError(
         "Solo se admiten imágenes (JPG, PNG, WebP…) para la certificación gratuita."
       );
       return;
     }
+
+    setLoading(true);
 
     /* ----------- File → DataURL ----------- */
     const reader = new FileReader();
@@ -37,33 +37,68 @@ export default function FreeCertification({ file, onBack }) {
 
         /* watermark */
         const logo = new Image();
-        logo.src = "/favicon.png"; // watermark
+        logo.src = "/favicon.png";
         logo.onload = () => {
-          const ratio = 0.18; // 18 % del ancho
+          const ratio = 0.18;
           const w = img.width * ratio;
           const h = (logo.height / logo.width) * w;
-          const margin = 24;
+          const m = 24;
+          ctx.globalAlpha = 0.82;
+          ctx.drawImage(logo, img.width - w - m, img.height - h - m, w, h);
 
-          ctx.globalAlpha = 0.82; // transparencia
-          ctx.drawImage(
-            logo,
-            img.width - w - margin,
-            img.height - h - margin,
-            w,
-            h
+          /* canvas → blob (JPEG 80 %) */
+          canvas.toBlob(
+            (resultBlob) => {
+              setBlob(resultBlob);
+              setPreviewURL(URL.createObjectURL(resultBlob));
+              setLoading(false);
+            },
+            "image/jpeg",
+            0.8 // calidad
           );
-
-          setPreview(canvas.toDataURL("image/png"));
         };
         logo.onerror = () => {
           console.error("No se pudo cargar /favicon.png");
           setError("No se encontró el watermark en /public/favicon.png");
+          setLoading(false);
         };
       };
       img.src = target.result;
     };
     reader.readAsDataURL(file);
+
+    /* cleanup */
+    return () => {
+      if (previewURL) URL.revokeObjectURL(previewURL);
+    };
   }, [file]);
+
+  /* ----------- helpers ----------- */
+  const handleShare = async () => {
+    if (!blob) return;
+    const shareFile = new File(
+      [blob],
+      `certified-${file.name.replace(/\.[^.]+$/, ".jpeg")}`,
+      {
+        type: "image/jpeg",
+      }
+    );
+
+    if (navigator.canShare?.({ files: [shareFile] })) {
+      try {
+        await navigator.share({
+          files: [shareFile],
+          title: "Certify",
+          text: "Imagen certificada con Certify",
+        });
+      } catch {
+        /* usuario canceló */
+      }
+    } else {
+      // Fallback: abrir la imagen en otra pestaña
+      window.open(previewURL, "_blank", "noopener,noreferrer");
+    }
+  };
 
   /* ----------- UI ----------- */
   if (!file) return null;
@@ -75,25 +110,32 @@ export default function FreeCertification({ file, onBack }) {
       </button>
 
       {error && <p className="text-red-600">{error}</p>}
+      {loading && !error && <p className="text-gray-600">Procesando imagen…</p>}
 
-      {!error && !preview && (
-        <p className="text-gray-600">Procesando imagen…</p>
-      )}
-
-      {preview && (
+      {previewURL && !error && (
         <>
           <img
-            src={preview}
+            src={previewURL}
             alt="Imagen certificada"
             className="max-w-full rounded shadow"
           />
-          <a
-            href={preview}
-            download={`certified-${file.name.replace(/\.[^.]+$/, ".png")}`}
-            className="bg-primary hover:bg-primaryLt text-white font-semibold px-6 py-3 rounded transition"
-          >
-            Descargar PNG
-          </a>
+
+          <div className="flex gap-4">
+            <a
+              href={previewURL}
+              download={`certified-${file.name.replace(/\.[^.]+$/, ".jpeg")}`}
+              className="bg-primary hover:bg-primaryLt text-white font-semibold px-6 py-3 rounded transition"
+            >
+              Guardar
+            </a>
+
+            <button
+              onClick={handleShare}
+              className="bg-emerald-600 hover:bg-emerald-500 text-white font-semibold px-6 py-3 rounded transition"
+            >
+              Enviar
+            </button>
+          </div>
         </>
       )}
     </div>
